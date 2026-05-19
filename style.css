@@ -1,0 +1,110 @@
+/* Custom Properties for HOA Branding */
+:root {
+    --hoa-red: #b91c1c; /* Matches Tailwind red-700 */
+    --hoa-red-dark: #991b1b;
+    --hoa-white: #ffffff;
+    --hoa-gray: #f9fafb;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Global Enhancements */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.7;
+    color: #333;
+}
+
+/* 2. Logo & Navigation Animation */
+nav {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-link {
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--hoa-red);
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 3. Hero Section Depth */
+header {
+    background: linear-gradient(135deg, var(--hoa-red) 0%, #7f1d1d 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay for the Hero */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 4. Staff Cards Hover Effect */
+#staff .bg-white {
+    transition: var(--transition-smooth);
+    border-bottom: 4px solid transparent;
+}
+
+#staff .bg-white:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-bottom: 4px solid var(--hoa-red);
+}
+
+/* 5. Contact Form Refinement */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.2) !important;
+    transform: scale(1.01);
+    transition: var(--transition-smooth);
+}
+
+button[type="submit"] {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 6px -1px rgba(185, 28, 28, 0.3);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(185, 28, 28, 0.4);
+}
+
+/* 6. Logo Styling (1778751156526.png) */
+img[src="1778751156526.png"] {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.5s ease;
+}
+
+img[src="1778751156526.png"]:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+/* 7. Typography */
+h1, h2, h3 {
+    letter-spacing: -0.025em;
+}
+
+#about p {
+    font-size: 1.125rem;
+    color: #4b5563;
+}
